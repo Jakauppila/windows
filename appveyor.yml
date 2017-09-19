@@ -38,7 +38,7 @@ test_script:
   - c:\opscode\chefdk\bin\cookstyle --version
   - c:\opscode\chefdk\bin\chef.bat exec foodcritic --version
   - c:\opscode\chefdk\bin\chef.bat exec delivery local all
-  - c:\opscode\chefdk\bin\chef.bat exec kitchen verify
+  - c:\opscode\chefdk\bin\chef.bat exec kitchen verify -c 1
 
 on_finish:
   - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
